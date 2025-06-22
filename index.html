@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <title>Conexão Campo-Cidade</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.2/p5.js"></script>
+  <script src="sketch.js"></script>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <main>
     <div id="menu">
       <h1>Conexão Campo-Cidade</h1>
-      <p>Campo e Cidade: Uma Conexão que Alimenta o Futuro...</p>
-      <button onclick="mudarCenario('campo')">Ver Campo</button>
-      <button onclick="mudarCenario('cidade')">Ver Cidade</button>
-      <button onclick="mudarCenario('conexao')">Ver Conexão</button>
+      <button onclick="cenario = 'campo'">Ver Campo</button>
+      <button onclick="cenario = 'cidade'">Ver Cidade</button>
+      <button onclick="cenario = 'conexao'">Ver Conexão</button>
     </div>
   </main>
-  <script src="sketch.js"></script>
 </body>
 </html>
