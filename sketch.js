@@ -1,30 +1,53 @@
 let cenario = "menu";
-let imgCampo, imgCidade;
+let imgCampo, imgCidade, imgConexao;
 
 function preload() {
   imgCampo = loadImage('campo.jpg');
   imgCidade = loadImage('cidade.jpg');
+  imgConexao = loadImage('conexao.jpg');
 }
 
 function setup() {
   createCanvas(800, 600);
   textAlign(CENTER, CENTER);
   textSize(16);
+
+  // Botões
+
+  let botaoMenu = createButton('Voltar ao Menu');
+  botaoMenu.position(37, 20);
+  botaoMenu.mousePressed(() => mudarCenario('menu'));
 }
 
 function draw() {
   background(220);
 
-  if (cenario === "campo") {
+  if (cenario === "menu") {
+    background(180, 220, 255);
+    fill(0);
+    
+    textSize(24);
+    
+    text("🌎 Conexão Campo e Cidade", width / 2, height / 2 - 60);
+    
+    textSize(16);
+    text("Escolha uma opção nos botões acima para explorar os cenários.", width / 2, height / 2 + 10, 300, 30);
+    
+  
+  } else if (cenario === "campo") {
     image(imgCampo, 0, 0, width, height);
     mostrarTextoCampo();
   } else if (cenario === "cidade") {
     image(imgCidade, 0, 0, width, height);
     mostrarTextoCidade();
   } else if (cenario === "conexao") {
-    background(200, 230, 200);
+    image(imgConexao, 0, 0, width, height);
     mostrarTextoConexao();
   }
+}
+
+function mudarCenario(novo) {
+  cenario = novo;
 }
 
 function mostrarTextoCampo() {
@@ -34,13 +57,13 @@ function mostrarTextoCampo() {
   rect(50, height - 220, width - 100, 180, 15);
   noStroke();
   fill(0);
-  textSize(18);
+  textSize(20);
   textAlign(CENTER, TOP);
-  text("O Campo", width / 2, height - 210);
+  text("🌿 O Campo", width / 2, height - 210);
 
-  textSize(14);
+  textSize(16);
   textAlign(LEFT, TOP);
-  textLeading(20);
+  textLeading(22);
   text(
     "Berço da produção de alimentos, biodiversidade e cultura.\n\n" +
     "No campo, a vida acontece em harmonia com a natureza.\n" +
@@ -56,13 +79,13 @@ function mostrarTextoCidade() {
   rect(50, height - 220, width - 100, 180, 15);
   noStroke();
   fill(0);
-  textSize(18);
+  textSize(20);
   textAlign(CENTER, TOP);
-  text("A Cidade", width / 2, height - 210);
+  text("🏙️ A Cidade", width / 2, height - 210);
 
-  textSize(14);
+  textSize(16);
   textAlign(LEFT, TOP);
-  textLeading(20);
+  textLeading(22);
   text(
     "Centro de consumo, inovação e serviços.\n\n" +
     "Nas cidades, os produtos do campo são transformados, distribuídos e consumidos.\n" +
@@ -78,17 +101,17 @@ function mostrarTextoConexao() {
   rect(50, height / 2 - 100, width - 100, 200, 15);
   noStroke();
   fill(0);
-  textSize(18);
+  textSize(20);
   textAlign(CENTER, TOP);
-  text("Conexão Campo-Cidade", width / 2, height / 2 - 90);
+  text("🌱 Conexão Campo-Cidade", width / 2, height / 2 - 90);
 
-  textSize(14);
+  textSize(16);
   textAlign(LEFT, TOP);
-  textLeading(20);
+  textLeading(22);
   text(
     "Uma relação de equilíbrio e sustentabilidade.\n\n" +
-    "O campo depende da cidade para inovação e mercado.\n" +
-    "A cidade depende do campo para o abastecimento de alimentos e recursos.\n\n" +
+    "🌾 O campo depende da cidade para inovação e mercado.\n" +
+    "🏙️ A cidade depende do campo para o abastecimento de alimentos e recursos.\n\n" +
     "Juntas, constroem um futuro sustentável.",
     70, height / 2 - 50, width - 140
   );
