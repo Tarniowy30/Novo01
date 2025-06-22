@@ -27,12 +27,6 @@ function draw() {
   }
 }
 
-// FUNÇÃO GLOBAL PARA MUDAR CENÁRIO
-function mudarCenario(novoCenario) {
-  cenario = novoCenario;
-  document.getElementById('menu').style.display = 'none';
-}
-
 function mostrarTextoCampo() {
   fill(255, 230);
   stroke(100);
@@ -98,8 +92,4 @@ function mostrarTextoConexao() {
     "Juntas, constroem um futuro sustentável.",
     70, height / 2 - 50, width - 140
   );
-}
-window.mudarCenario = function(novoCenario) {
-  cenario = novoCenario;
-  document.getElementById('menu').style.display = 'none';
 }
